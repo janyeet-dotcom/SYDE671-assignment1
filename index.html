@@ -74,13 +74,15 @@ body {
 
 <p>Then, the user is to select two anchor points. An anchor point is an image feature that you can safely identify in all three
     images that can be used for image alignment, such as the corner of a building, or the tip of a tree. Two anchors are the default,
-    but the user can select more or less in the terminal window.
+    but the user can select more or less in the terminal window. (I used three anchors to show the selection of two anchor points, Claude
+    hates me and has me locked out until 7PM tonight, so I can't implement the "confirm" button on anchor points instead of it automatically
+    moving on...)
 </p>
 
 <div class = 'image-container'>
-    <img src="Output\00125R-anchor.png" width="500" height="500">
-    <img src="Output\00125G-anchor.png" width="500" height="500">
-    <img src="Output\00125B-anchor.png" width="500" height="500">
+    <img src="Output\00125R-anchor.png" height="500">
+    <img src="Output\00125G-anchor.png" height="500">
+    <img src="Output\00125B-anchor.png" height="500">
 </div>
 
 <p>Using these anchor points as a starting point, the script aims to minimize a sum of squared differences 
