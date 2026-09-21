@@ -11,7 +11,6 @@ body {
 </head>
 <body>
     <h1>Welcome to My SYDE671 Portfolio!</h1>
-    <a href="./1/index.html">Assignment 1</a>
     <h2>Part 1: Selfie: The Wrong Way vs. the Right Way</h2>
         <div class = 'image-container'>
             <img src="SYDE671_Assignment_1_Images_/IMG_7499.jpeg" alt="Close-up Selfie with no Zoom" width="500">
@@ -45,18 +44,51 @@ body {
     </p>
 
 <h2>Part 4: Images of the Russian Empire - Colourizing the Prokudin-Gorskii photo collection</h2>
-<p>To start off, I visited the Library of Congress to see how they formed the colour images from Prokudin-Gorskii's 
-    images.
-    The steps were as follows:
-    Invert the images from their imaging orientation, which was upsidedown.
-    The entire plate is reduced to 8-bit grayscale mode.
-    The scan of the entire plate is aligned and outside edges are cropped.
-    An electronic file is created for each image to form three separate "layers"
-    While still in grayscale, the three layers are algined to form the colour composite, this is the most difficult step,
-    they used the help of "anchors" to help with alignment.
-    The RGB colour composite is cropped to eliminate all but the area shared by all three layers
-    Cropped colour composite is adjusted to create the proper contrast, shading, highlight and shadow details 
-    Fine adjustments are made.
+
+<p>Prokudin-Gorskii was a Russian photographer who developed a method for capturing colour images in the 20th century.
+    He did this by photographing the same scene three times, each time with a different colour filter (red, green and blue). 
+    The three images are then aligned and combined to create a full-colour image. The Library of Congress in the United States
+    has digitized his collection and made it available online, alllowing us to download the images, and recreate the scenes
+    in colour with modern techniques of image alignment and photo editing.
 </p>
+
+<p>To start off, I visited the Library of Congress to see how they formed the colour images from Prokudin-Gorskii's 
+    images. I was then able to create a script in Python to automate some parts of the proceess, with intermediate steps that
+    allow the user to interact with the process. I've attached the outputs of the riverside scene along with the functionality of
+    my script.
+</p>
+
+<p>The in put of the script is a vertical strip with the three filtered images in the order R, G, B.</p>
+<img src="SYDE671_Assignment_1_Images_\data\00125v.jpg" width="500">
+
+<p>The script then converts the image to 8-bit scale, removes some borders, and splits the image into the individual Red,
+    Green, and Blue layers. There is the option to manually crop the borders of the individual layers, as I found that thresholding
+    cropped and contrast cropping were not always accurate.
+</p>
+
+<div class = 'image-container'>
+    <img src="SYDE671_Assignment_1_Images_\data\Output\imageR.png" width="500" height="500">
+    <img src="SYDE671_Assignment_1_Images_\data\Output\imageG.png" width="500" height="500">
+    <img src="SYDE671_Assignment_1_Images_\data\Output\imageB.png" width="500" height="500">
+</div>
+
+<p>Then, the user is to select two anchor points. An anchor point is an image feature that you can safely identify in all three
+    images that can be used for image alignment, such as the corner of a building, or the tip of a tree. Two anchors are the default,
+    but the user can select more or less in the terminal window.
+</p>
+
+<div class = 'image-container'>
+    <img src="SYDE671_Assignment_1_Images_\data\Output\00125R-anchor.png" width="500" height="500">
+    <img src="SYDE671_Assignment_1_Images_\data\Output\00125G-anchor.png" width="500" height="500">
+    <img src="SYDE671_Assignment_1_Images_\data\Output\00125B-anchor.png" width="500" height="500">
+</div>
+
+<p>Using these anchor points as a starting point, the script aims to minimize a sum of squared differences 
+    between the pixel values in the three layers by searching nearby locations. You can set this value in the terminal,
+    I started with a value of 40. Once this equation is minimized, the aligned layers are combined to form the final 
+    colour composite. Let's see how we did just now!</p>
+
+<img src="SYDE671_Assignment_1_Images_\data\Output\composite_aligned.png" width="500">
+
 </body>
 </html>
