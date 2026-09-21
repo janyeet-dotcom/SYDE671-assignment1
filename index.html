@@ -59,7 +59,7 @@ body {
 </p>
 
 <p>The in put of the script is a vertical strip with the three filtered images in the order R, G, B.</p>
-<img src="SYDE671_Assignment_1_Images_\data\00125v.jpg" width="500">
+<img src="Output\00125v.jpg" width="500">
 
 <p>The script then converts the image to 8-bit scale, removes some borders, and splits the image into the individual Red,
     Green, and Blue layers. There is the option to manually crop the borders of the individual layers, as I found that thresholding
@@ -67,9 +67,9 @@ body {
 </p>
 
 <div class = 'image-container'>
-    <img src="SYDE671_Assignment_1_Images_\data\Output\imageR.png" width="500" height="500">
-    <img src="SYDE671_Assignment_1_Images_\data\Output\imageG.png" width="500" height="500">
-    <img src="SYDE671_Assignment_1_Images_\data\Output\imageB.png" width="500" height="500">
+    <img src="Output\imageR.png" width="500" height="500">
+    <img src="Output\imageG.png" width="500" height="500">
+    <img src="Output\imageB.png" width="500" height="500">
 </div>
 
 <p>Then, the user is to select two anchor points. An anchor point is an image feature that you can safely identify in all three
@@ -78,9 +78,9 @@ body {
 </p>
 
 <div class = 'image-container'>
-    <img src="SYDE671_Assignment_1_Images_\data\Output\00125R-anchor.png" width="500" height="500">
-    <img src="SYDE671_Assignment_1_Images_\data\Output\00125G-anchor.png" width="500" height="500">
-    <img src="SYDE671_Assignment_1_Images_\data\Output\00125B-anchor.png" width="500" height="500">
+    <img src="Output\00125R-anchor.png" width="500" height="500">
+    <img src="Output\00125G-anchor.png" width="500" height="500">
+    <img src="Output\00125B-anchor.png" width="500" height="500">
 </div>
 
 <p>Using these anchor points as a starting point, the script aims to minimize a sum of squared differences 
@@ -88,7 +88,7 @@ body {
     I started with a value of 40. Once this equation is minimized, the aligned layers are combined to form the final 
     colour composite. Let's see how we did just now!</p>
 
-<img src="SYDE671_Assignment_1_Images_\data\Output\composite_aligned.png" width="500">
+<img src="Output\composite_aligned.png" width="500">
 
 </body>
 </html>
