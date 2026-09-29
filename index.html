@@ -6,11 +6,12 @@
 <title>SYDE671 Assignment 1</title>
 <style>
 body { font-family: Arial, sans-serif; margin: 20px auto; padding: 0 20px; max-width: 1100px; line-height: 1.55; color: #222; }
-h1 { border-bottom: 2px solid #ddd; padding-bottom: 8px; }
-h2 { margin-top: 2.2em; border-bottom: 1px solid #ddd; padding-bottom: 4px; }
+h1 { border-bottom: 2px solid #ddd; padding-bottom: 8px; text-align: center; }
+h2 { margin-top: 2.2em; border-bottom: 1px solid #ddd; padding-bottom: 4px; text-align: center; }
 h3 { margin-top: 1.6em; }
 h4 { margin-top: 1.3em; }
-p, li { max-width: 850px; }
+h3, h4, p, ol, ul { max-width: 850px; margin-left: auto; margin-right: auto; box-sizing: border-box; }
+ol, ul { padding-left: 2em; }
 figure { margin: 0; text-align: center; }
 figcaption { font-size: 0.9em; color: #555; margin-top: 6px; }
 img { max-width: 100%; height: auto; }
@@ -256,13 +257,12 @@ th { background: #f3f3f3; }
 <table>
   <thead><tr><th>Plate</th><th>G &rarr; B (L2)</th><th>R &rarr; B (L2)</th><th>G &rarr; B (NCC)</th><th>R &rarr; B (NCC)</th></tr></thead>
   <tbody>
-    <!-- TODO: one row per plate (all 18 provided images plus your own). Values below are placeholders. -->
-    <tr><td>00056v</td><td>(1,6)</td><td>(1,13)</td><td>(1,6)</td><td>(1,13)</td></tr>
-    <tr><td>00125v</td><td>(2,5)</td><td>(1,10)</td><td>(2,5)</td><td>(1,10)</td></tr>
-    <tr><td>00163v</td><td>(1,-3)</td><td>(1,-4)</td><td>(1,-3)</td><td>(1,-4)</td></tr>
-    <tr><td>00458u</td><td>(5,35)</td><td>(26,71)</td><td>(5,35)</td><td>(26,71)</td></tr>
-    <tr><td>00804v</td><td>(-2, 6)</td><td>(-4,13)</td><td>(-2,6)</td><td>(-4,13)</td></tr>
-    <tr><td>01007a</td><td>(11,49)</td><td>(11,105)</td><td>(11,49)</td><td>(11,105)</td></tr>
+    <tr><td>00056v</td><td>(1, 6)</td><td>(1, 13)</td><td>(1, 6)</td><td>(1, 13)</td></tr>
+    <tr><td>00125v</td><td>(2, 5)</td><td>(1, 10)</td><td>(2, 5)</td><td>(1, 10)</td></tr>
+    <tr><td>00163v</td><td>(1, -3)</td><td>(1, -4)</td><td>(1, -3)</td><td>(1, -4)</td></tr>
+    <tr><td>00458u</td><td>(5, 35)</td><td>(26, 71)</td><td>(5, 35)</td><td>(26, 71)</td></tr>
+    <tr><td>00804v</td><td>(-2, 6)</td><td>(-4, 13)</td><td>(-2, 6)</td><td>(-4, 13)</td></tr>
+    <tr><td>01007a</td><td>(11, 49)</td><td>(11, 105)</td><td>(11, 49)</td><td>(11, 105)</td></tr>
     <tr><td>01047u</td><td>(16, 20)</td><td>(28, 59)</td><td>(16, 20)</td><td>(28, 59)</td></tr>
     <tr><td>01164v</td><td>(2, 6)</td><td>(3, 11)</td><td>(2, 6)</td><td>(3, 11)</td></tr>
     <tr><td>01269v</td><td>(2, 6)</td><td>(3, 14)</td><td>(2, 6)</td><td>(3, 14)</td></tr>
@@ -270,13 +270,14 @@ th { background: #f3f3f3; }
     <tr><td>01597v</td><td>(1, 7)</td><td>(1, 16)</td><td>(1, 7)</td><td>(1, 16)</td></tr>
     <tr><td>01598v</td><td>(0, 8)</td><td>(-1, 17)</td><td>(0, 8)</td><td>(-1, 17)</td></tr>
     <tr><td>01657u</td><td>(7, 45)</td><td>(9, 96)</td><td>(7, 45)</td><td>(10, 96)</td></tr>
-    <tr><td>01725u</td><td>(37, 64)</td><td>(64, 133)</td><td>(37, 64)</td ><td>(64, 133)</td></tr>
+    <tr><td>01725u</td><td>(37, 64)</td><td>(64, 133)</td><td>(37, 64)</td><td>(64, 133)</td></tr>
     <tr><td>01728v</td><td>(1, 8)</td><td>(1, 18)</td><td>(1, 8)</td><td>(1, 18)</td></tr>
     <tr><td>01861a</td><td>(32, 59)</td><td>(52, 122)</td><td>(32, 59)</td><td>(52, 122)</td></tr>
     <tr><td>10131v</td><td>(2, 6)</td><td>(3, 12)</td><td>(2, 6)</td><td>(3, 12)</td></tr>
     <tr><td>31421v</td><td>(0, 8)</td><td>(0, 13)</td><td>(0, 8)</td><td>(0, 13)</td></tr>
   </tbody>
 </table>
+<p>Across all 18 plates, L2 and NCC agreed on every displacement except one: the R &rarr; B offset for 01657u is (9, 96) with L2 and (10, 96) with NCC. This is expected. Once each channel is normalized to zero mean and unit variance, minimizing the mean squared difference is nearly the same as maximizing correlation, so the two metrics rank candidate shifts almost identically. They are not perfectly equivalent because I normalize the whole channel but score only the interior region.</p>
 
 <h3>Bells &amp; whistles: automatic border cropping</h3>
 <p>This assignment was already a struggle, but here I am with some extra time on my hands, and I decided to give the bells &amp; whistles a try.
@@ -309,26 +310,30 @@ th { background: #f3f3f3; }
 
 <h3>Failure cases and limitations</h3>
 <p>I tested my script extensively, and it worked well on all 18 images included in the assignment. That took wayyyy too much time!
-    The one thing would just be that I was unable to get auto-crop to work well on all the images.
+    The one exception is that I couldn't get auto-crop to work well on every image.
     </p>
 
 <p>I used the Emir of Bukhara to test the bells and whistles, however it didn't even make it to the autocrop step! 
     Matching raw pixel intensities assumes the same object has similar brightness in every channel. That breaks down when it doesn't. 
     In the Emir portrait, his blue robe is bright in the blue channel but dark in the red channel, so the intensity-based score can favor a 
-    wrong shift. Aligning on image gradients or edges, might be a more effective method.</p>
+    wrong shift. To test if the problem was a matter of limited search radius or if the global minimum was truly the misaligned image, I ran 
+    the extensive search, and it turns out it was the former. For efficiency, aligning on image gradients or edges might be a more effective method.</p>
 <figure class="single" style="max-width:none">
-  <img src="SYDE671_Assignment_1_Images_\01886-lc.png" alt="Emir of Bukhara using pyramid method" class="center-image" style="max-height:600px">
-  <figcaption>Emir of Bukhara using pyramid method</figcaption>
+  <img src="SYDE671_Assignment_1_Images_/01886-lc.png" alt="Emir of Bukhara using pyramid method" class="center-image" style="max-height:600px">
+  <figcaption>Emir of Bukhara using the pyramid method: the channels are still misaligned.</figcaption>
 </figure>    
-    
+<figure class="single" style="max-width:none">
+  <img src="SYDE671_Assignment_1_Images_/01886-singlescale.png" alt="Emir of Bukhara using an exhaustive search" class="center-image" style="max-height:600px">
+  <figcaption>Emir of Bukhara using an exhaustive search.</figcaption>
+</figure>     
 
 <figure class="single" style="max-width:none">
-  <img src="SYDE671_Assignment_1_Images_/contact_sheet_l2.jpg" alt="Contact sheet of all 18 aligned plates using l2" class="center-image" style="max-height:600px">
-  <figcaption>Contact sheet of all 18 aligned results using l2.</figcaption>
+  <a href="SYDE671_Assignment_1_Images_/contact_sheet_l2.jpg"><img src="SYDE671_Assignment_1_Images_/contact_sheet_l2.jpg" alt="Contact sheet of all 18 aligned plates using L2" class="center-image" style="max-height:600px"></a>
+  <figcaption>Contact sheet of all 18 aligned results using L2.</figcaption>
 </figure>
 <figure class="single" style="max-width:none">
-  <img src="SYDE671_Assignment_1_Images_/contact_sheet_ncc.jpg" alt="Contact sheet of all 18 aligned plates using ncc" class="center-image" style="max-height:600px">
-  <figcaption>Contact sheet of all 18 aligned results using ncc.</figcaption>
+  <a href="SYDE671_Assignment_1_Images_/contact_sheet_ncc.jpg"><img src="SYDE671_Assignment_1_Images_/contact_sheet_ncc.jpg" alt="Contact sheet of all 18 aligned plates using NCC" class="center-image" style="max-height:600px"></a>
+  <figcaption>Contact sheet of all 18 aligned results using NCC.</figcaption>
 </figure>
 </body>
 </html>
