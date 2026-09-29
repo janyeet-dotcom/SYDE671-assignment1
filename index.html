@@ -1,161 +1,334 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>My Portfolio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SYDE671 Assignment 1</title>
 <style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-}
+body { font-family: Arial, sans-serif; margin: 20px auto; padding: 0 20px; max-width: 1100px; line-height: 1.55; color: #222; }
+h1 { border-bottom: 2px solid #ddd; padding-bottom: 8px; }
+h2 { margin-top: 2.2em; border-bottom: 1px solid #ddd; padding-bottom: 4px; }
+h3 { margin-top: 1.6em; }
+h4 { margin-top: 1.3em; }
+p, li { max-width: 850px; }
+figure { margin: 0; text-align: center; }
+figcaption { font-size: 0.9em; color: #555; margin-top: 6px; }
+img { max-width: 100%; height: auto; }
+.center-image { display: block; margin: 0 auto; }
+.image-container { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; align-items: flex-start; margin: 1.2em 0; }
+.image-container figure { flex: 0 1 500px; }
+.image-container.small figure { flex-basis: 320px; }
+.single { margin: 1.2em auto; max-width: 500px; }
+.image-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 1.2em 0; }
+table { border-collapse: collapse; margin: 1em auto; font-size: 0.95em; }
+th, td { border: 1px solid #ccc; padding: 6px 12px; text-align: center; }
+th { background: #f3f3f3; }
+@media (max-width: 700px) { .image-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
-    <h1>Welcome to My SYDE671 Portfolio!</h1>
-    <h2>Part 1: Selfie: The Wrong Way vs. the Right Way</h2>
-        <div class = 'image-container'>
-            <img src="SYDE671_Assignment_1_Images_/IMG_7499.jpeg" alt="Close-up Selfie with no Zoom" width="500" class="center-image">
-            <img src="SYDE671_Assignment_1_Images_/IMG_7536.jpeg" alt="Further-away Selfie with Zoom" width="500" class="center-image">
-        </div>
-    <p>To kick this assignment off, I first took a selfie up close to my face, and then took a few steps
-        away and took the same image by zooming into my face. While I'd like to think I look good in all 
-        photos, the second one will feature less distortions. While taking a close-up selfie, the distance
-        each of the facial features are from the camera vary significantly, as our noses might
-        be twice as close to the camera as out ears and jaw, which causes the nose to be disproportionately
-        large and the sides of the face to be compressed. Taking the photo from a distance will bring the
-        different features to around the same distance from the camera, creating an image more similar to when
-        other people look at you.
-    </p>
-    <h2>Part 2: Architectural Prespective Compression</h2>
-        <div class = 'image-container'>
-            <img src="SYDE671_Assignment_1_Images_/IMG_7540.jpeg" alt="UW Path from Far away and with Zoom" width="500" class="center-image">
-            <img src="SYDE671_Assignment_1_Images_/IMG_7541.jpeg" alt="UW Path from Closer and without Zoom" width="500" class="center-image">
-        </div>
-    <p>Next, I repeated this process with some scenery outside DWE. When it comes to scenes, the same logic as selfies
-        applies, however the opposite effect is desired. From a distance, the items of interest, perhaps the bench,
-        Tim Hortons flag and street light are all around the same distance from the camera, so they appear flat in the image.
-        But when I'm standing closer, the distances begin to vary significantly, giving us a sense of depth in the image.
-    </p>
+<h1>Welcome to My SYDE671 Portfolio!</h1>
 
-<h2>Part 3: The Dolly Zoom</h2>
-    <img src="SYDE671_Assignment_1_Images_/SYDE671Assignment1.gif" alt="Close-up Selfie with no Zoom" width="500" height = "500" class="center-image">
-    <p>Finally I created a cinematic scene of Mr. Goose looking into the distance with melancholy, perhaps pondering the 
-        philosophical issues of this world, with a dolly zoom. This effect is created by moving away from the subject while
-        simultaneously zooming in, creating an effect where the background seems to be racing past the subject.
-    </p>
+<!-- ================= PART ONE ================= -->
+<h2>Part One: Becoming Friends with Your Camera</h2>
 
-<h2>Part 4: Images of the Russian Empire - Colourizing the Prokudin-Gorskii photo collection</h2>
+<h3>Selfie: The Wrong Way vs. the Right Way</h3>
+<div class="image-container">
+  <figure>
+    <img src="SYDE671_Assignment_1_Images_/IMG_7499.jpeg" alt="Close-up selfie taken without zoom" class="center-image">
+    <figcaption>Close-up, no zoom: features nearer the lens look exaggerated.</figcaption>
+  </figure>
+  <figure>
+    <img src="SYDE671_Assignment_1_Images_/IMG_7536.jpeg" alt="Selfie taken from farther away with zoom" class="center-image">
+    <figcaption>Farther away, zoomed in: the face is the same size but proportions look natural.</figcaption>
+  </figure>
+</div>
+<p>To kick this assignment off, I first took a selfie up close to my face, and then took a few steps
+  away and took the same image by zooming into my face. While I'd like to think I look good in all
+  photos, the second one will feature fewer distortions. While taking a close-up selfie, the distance
+  of each of the facial features from the camera varies significantly, as our noses might
+  be twice as close to the camera as our ears and jaw, which causes the nose to be disproportionately
+  large and the sides of the face to be compressed. Taking the photo from a distance brings the
+  different features to around the same distance from the camera, creating an image more similar to when
+  other people look at you.</p>
+
+<h3>Architectural Perspective Compression</h3>
+<div class="image-container">
+  <figure>
+    <img src="SYDE671_Assignment_1_Images_/IMG_7540.jpeg" alt="Campus path photographed from far away with zoom" class="center-image">
+    <figcaption>Far away, zoomed in: the scene looks flat and compressed.</figcaption>
+  </figure>
+  <figure>
+    <img src="SYDE671_Assignment_1_Images_/IMG_7541.jpeg" alt="Campus path photographed from closer without zoom" class="center-image">
+    <figcaption>Closer, no zoom: a stronger sense of depth.</figcaption>
+  </figure>
+</div>
+<p>Next, I repeated this process with some scenery outside DWE. When it comes to scenes, the same logic as selfies
+  applies, however the opposite effect is desired. From a distance, the items of interest, perhaps the bench,
+  Tim Hortons flag and street light, are all around the same distance from the camera, so they appear flat in the image.
+  But when I'm standing closer, the distances begin to vary significantly, giving us a sense of depth in the image.</p>
+
+<h3>The Dolly Zoom</h3>
+<figure class="single">
+  <img src="SYDE671_Assignment_1_Images_/SYDE671Assignment1.gif" alt="Animated dolly zoom of Mr. Goose" class="center-image">
+  <figcaption>Dolly zoom: the camera moves back while the lens zooms in.</figcaption>
+</figure>
+<p>Finally I created a cinematic scene of Mr. Goose looking into the distance with melancholy, perhaps pondering the
+  philosophical issues of this world, with a dolly zoom. This effect is created by moving away from the subject while
+  simultaneously zooming in, creating an effect where the background seems to be racing past the subject.</p>
+
+<!-- ================= PART TWO ================= -->
+<h2>Part Two: Images of the Russian Empire &ndash; Colourizing the Prokudin-Gorskii Photo Collection</h2>
+
 <h3>Getting started</h3>
-<p>Prokudin-Gorskii was a Russian photographer who developed a method for capturing colour images in the 20th century.
-    He did this by photographing the same scene three times, each time with a different colour filter (red, green and blue). 
-    The three images are then aligned and combined to create a full-colour image. The Library of Congress in the United States
-    has digitized his collection and made it available online, alllowing us to download the images, and recreate the scenes
-    in colour with modern techniques of image alignment and photo editing.
-</p>
+<p>Prokudin-Gorskii was a Russian photographer who developed a method for capturing colour images in the early 20th century.
+  He did this by photographing the same scene three times, each time with a different colour filter (red, green and blue).
+  The three images are then aligned and combined to create a full-colour image. The Library of Congress in the United States
+  has digitized his collection and made it available online, allowing us to download the images and recreate the scenes
+  in colour with modern techniques of image alignment and photo editing.</p>
 
-<p>To start off, I visited the Library of Congress to see how they formed the colour images from Prokudin-Gorskii's 
-    images. I was then able to create a script in Python to automate some parts of the process, with intermediate steps that
-    allow the user to interact. I've attached the outputs of the riverside scene along with the functionality of
-    my script. I would consider this as my "brute force" method of getting the images aligned.
-</p>
+<p>To start off, I visited the Library of Congress to see how they formed the colour images from Prokudin-Gorskii's
+  images. I then created a script in Python to automate parts of the process, with intermediate steps that
+  allow the user to interact. I've attached the outputs of the riverside scene along with the functionality of
+  my script. I would consider this my "brute force" method of getting the images aligned.</p>
 
-<p>The in put of the script is a vertical strip with the three filtered images in the order B, G, R.</p>
-<img src="SYDE671_Assignment_1_Images_\00125v.jpg" width="500" class="center-image  ">
+<p>The input of the script is a vertical strip with the three filtered images in the order B, G, R.</p>
+<figure class="single">
+  <img src="SYDE671_Assignment_1_Images_/00125v.jpg" alt="Stacked glass plate scan 00125 with blue, green and red exposures top to bottom">
+  <figcaption>Plate 00125: the raw scan, with B, G and R exposures stacked top to bottom.</figcaption>
+</figure>
 
-<p>The script then converts the image to 8-bit scale and splits the image into the individual Red,
-    Green, and Blue layers. The script takes inputs that are 8-bit jpg images as well as 16-bit tiff images.
-</p>
-
-<div class = 'image-container'>
-    <img src="SYDE671_Assignment_1_Images_\imageB.png" width="500" height="500" class="center-image">
-    <img src="SYDE671_Assignment_1_Images_\imageG.png" width="500" height="500" class="center-image">
-    <img src="SYDE671_Assignment_1_Images_\imageR.png" width="500" height="500" class="center-image">
+<p>The script then converts the image to 8-bit scale and splits it into the individual Blue,
+  Green, and Red layers. The script takes 8-bit JPG images as well as 16-bit TIFF images.</p>
+<div class="image-container small">
+  <figure>
+    <img src="SYDE671_Assignment_1_Images_/imageB.png" alt="Blue-filter channel of plate 00125" class="center-image">
+    <figcaption>Blue channel (reference)</figcaption>
+  </figure>
+  <figure>
+    <img src="SYDE671_Assignment_1_Images_/imageG.png" alt="Green-filter channel of plate 00125" class="center-image">
+    <figcaption>Green channel</figcaption>
+  </figure>
+  <figure>
+    <img src="SYDE671_Assignment_1_Images_/imageR.png" alt="Red-filter channel of plate 00125" class="center-image">
+    <figcaption>Red channel</figcaption>
+  </figure>
 </div>
 
-<p>To help improve the quality of the alignment process, There are a couple of additional measure I put into place.
-</p>
+<p>To help improve the quality of the alignment process, I put a couple of additional measures in place.</p>
 
-<p> Each channel features a different filter's view of the scene, so the channels have different overall brightness and
-    contrast. Before scoring, every channel is normalized to zero mean and unit standard deviation,
-    so the metrics compare structure rather than exposure.
-  </p>
+<p>Each channel features a different filter's view of the scene, so the channels have different overall brightness and
+  contrast. Before scoring, every channel is normalized to zero mean and unit standard deviation,
+  so the metrics compare structure rather than exposure.</p>
 <p>Scores (Euclidean distances) are computed only on the interior of the images, with 10% dropped from each side. The
-    plate borders, dust and scan edges are not part of the scene, and <code>np.roll</code> wraps pixels around
-    the image edge when it shifts. Both of these would otherwise skew the score toward wrong shifts.
-  </p>
+  plate borders, dust and scan edges are not part of the scene, and <code>np.roll</code> wraps pixels around
+  the image edge when it shifts. Both of these would otherwise skew the score toward wrong shifts.</p>
 
-<p>To help with alignment, the user is to select anchor points. An anchor point is an image feature that you can safely identify in all three
-    images that can be used for image alignment, such as the corner of a building, or the tip of a tree. Two anchors are the default,
-    but the user can select more or less in the terminal window. I've selected three anchors in this example, two are visible in the 
-    screen captures I took. </p>
-
-<div class = 'image-container'>
-    <img src="SYDE671_Assignment_1_Images_\00125B-anchor.png" height="300" class="center-image">
-    <img src="SYDE671_Assignment_1_Images_\00125G-anchor.png" height="300" class="center-image">
-    <img src="SYDE671_Assignment_1_Images_\00125R-anchor.png" height="300" class="center-image">
+<p>To help with alignment, the user selects anchor points. An anchor point is an image feature that you can safely identify in all three
+  images, such as the corner of a building or the tip of a tree. Two anchors are the default,
+  but the user can select more or fewer in the terminal window. I selected three anchors in this example; two are visible in the
+  screen captures I took.</p>
+<div class="image-container small">
+  <figure>
+    <img src="SYDE671_Assignment_1_Images_/00125B-anchor.png" alt="Screen capture of anchor selection on the blue channel" class="center-image">
+    <figcaption>Anchors on B</figcaption>
+  </figure>
+  <figure>
+    <img src="SYDE671_Assignment_1_Images_/00125G-anchor.png" alt="Screen capture of anchor selection on the green channel" class="center-image">
+    <figcaption>Anchors on G</figcaption>
+  </figure>
+  <figure>
+    <img src="SYDE671_Assignment_1_Images_/00125R-anchor.png" alt="Screen capture of anchor selection on the red channel" class="center-image">
+    <figcaption>Anchors on R</figcaption>
+  </figure>
 </div>
 
-<p>Using these anchor points as a starting point, the script aims to minimize a the Euclidean distance
-    between the pixel values in the three layers by searching nearby locations. You can set this value in the terminal,
-    I started with a value of 40. Once this equation is minimized, the aligned layers are combined to form the final 
-    colour composite. Let's see how we did just now!</p>
+<p>Using these anchor points as a starting point, the script minimizes the Euclidean distance
+  between the pixel values in the three layers by searching nearby locations. You can set the search range in the terminal;
+  I started with a value of 40. Once the distance is minimized, the aligned layers are combined to form the final
+  colour composite. Let's see how we did!</p>
+<figure class="single">
+  <img src="SYDE671_Assignment_1_Images_/00125-anchormethod.png" alt="Plate 00125 aligned with the anchor-point method">
+  <figcaption>Plate 00125 colourized with the anchor-point method.</figcaption>
+</figure>
 
-<img src="SYDE671_Assignment_1_Images_\00125-anchormethod.png" width="500" class="center-image">
-
-<p> I tried this again for a few more images for good measure.</p>
-<div class = 'image-container'>
-    <img src="SYDE671_Assignment_1_Images_\00163-anchor.png" height="300" class="center-image">
-    <img src="SYDE671_Assignment_1_Images_\01007-anchor.png" height="300" class="center-image">
-    <img src="SYDE671_Assignment_1_Images_\31421-anchor.png" height="300" class="center-image">
+<p>I tried this again for a few more images for good measure.</p>
+<div class="image-container small">
+  <figure>
+    <img src="SYDE671_Assignment_1_Images_/00163-anchor.png" alt="Plate 00163 aligned with the anchor-point method" class="center-image">
+    <figcaption>Plate 00163</figcaption>
+  </figure>
+  <figure>
+    <img src="SYDE671_Assignment_1_Images_/01007-anchor.png" alt="Plate 01007 aligned with the anchor-point method" class="center-image">
+    <figcaption>Plate 01007</figcaption>
+  </figure>
+  <figure>
+    <img src="SYDE671_Assignment_1_Images_/31421-anchor.png" alt="Plate 31421 aligned with the anchor-point method" class="center-image">
+    <figcaption>Plate 31421</figcaption>
+  </figure>
 </div>
 
 <h3>Automating the process</h3>
 <h4>Single-scale search</h4>
-<p> Now that the brute force method is complete, I moved onto a more automated approach. I did this by using an image pyramid to search
-    for alignment at a lower resolution, and then using that as a starting point for the next higher resolution. This allows for a more 
-    efficient search, and can also help to avoid local minima in the optimization process.
-</p>
+<p>Now that the brute force method is complete, I moved on to a more automated approach. The plan was to use an image pyramid to search
+  for alignment at a lower resolution, and then use that as a starting point for the next higher resolution. This allows for a more
+  efficient search, and can also help to avoid local minima in the optimization process.</p>
 
-<p> To see if this idea will work, I first implemented a simple version of the image pyramid approach, the exhaustive search. 
-    For every integer shift (dy, dx) in a window of ±15 pixels, the moving channel is shifted with np.roll, scored against the 
-    reference (B) on the interior region, and the best-scoring shift is kept. For the smaller images, such as the 00125 of the 
-    church and river, this process should not be too costly. I've put the output of the aligned images below, the left is the 
-    exhaustive search, and the right is the pyramid search. Pretty similar, right?
-</p>
-
-<div class = 'image-container'>
-    <img src="SYDE671_Assignment_1_Images_\00125-singlescale.png" height="300" class="center-image">
-    <img src="SYDE671_Assignment_1_Images_\00125-pyramid-l2.png" height="300" class="center-image">  
+<p>To see if this idea would work, I first implemented the simple single-scale version: an exhaustive search.
+  For every integer shift (dy, dx) in a window of &plusmn;15 pixels, the moving channel is shifted with <code>np.roll</code>, scored against the
+  reference (B) on the interior region, and the best-scoring shift is kept. For the smaller images, such as 00125 of the
+  church and river, this process is not too costly. The aligned outputs are below: the left is the
+  exhaustive search, and the right is the pyramid search. Pretty similar, right?</p>
+<div class="image-container">
+  <figure>
+    <img src="SYDE671_Assignment_1_Images_/00125-singlescale.png" alt="Plate 00125 aligned with single-scale exhaustive search" class="center-image">
+    <figcaption>Single-scale exhaustive search (L2)</figcaption>
+  </figure>
+  <figure>
+    <img src="SYDE671_Assignment_1_Images_/00125-pyramid-l2.png" alt="Plate 00125 aligned with the multi-scale pyramid search" class="center-image">
+    <figcaption>Multi-scale pyramid search (L2)</figcaption>
+  </figure>
 </div>
 
 <h4>Multi-scale image pyramid</h4>
-<p>Now that I know that minimizing l2 will eventually give me an aligned image, I can proceed with using the pyramid method to improve
-    the efficiency of the search. To handle large images, the same search function is reused recursively in a coarse-to-fine pyramid. 
-    The pyramid is built from my own downsampler, which halves each dimension by averaging every 2×2 block of pixels. Averaging acts as 
-    a simple low-pass filter, so shrinking the image doesn't introduce aliasing artifacts that could mislead the search. The algorithm 
-    works like this:
-</p>
- <ol>
-    <li>If the image is large (shortest side &ge; 300 px), downsample both channels by 2 and solve for the shift at that scale.</li>
-    <li>Multiply the returned shift by 2 to convert it to the current resolution.</li>
-    <li>Refine it with a tiny exhaustive search of &plusmn;2 pixels around the estimate.</li>
-    <li>At the coarsest level (shortest side &lt; 300 px), there is no estimate to start from, so do the full&plusmn;15 px search around (0, 0).</li>
-  </ol>
+<p>Now that I know that minimizing L2 will give me an aligned image, I can use the pyramid method to improve
+  the efficiency of the search. To handle large images, the same search function is reused recursively in a coarse-to-fine pyramid.
+  The pyramid is built from my own downsampler, which halves each dimension by averaging every 2&times;2 block of pixels. Averaging acts as
+  a simple low-pass filter, so shrinking the image doesn't introduce aliasing artifacts that could mislead the search. The algorithm
+  works like this:</p>
+<ol>
+  <li>If the image is large (shortest side &ge; 300 px), downsample both channels by 2 and solve for the shift at that scale.</li>
+  <li>Multiply the returned shift by 2 to convert it to the current resolution.</li>
+  <li>Refine it with a tiny exhaustive search of &plusmn;2 pixels around the estimate.</li>
+  <li>At the coarsest level (shortest side &lt; 300 px), there is no estimate to start from, so do the full &plusmn;15 px search around (0, 0).</li>
+</ol>
+<p>A &plusmn;15 px search on a tiny image corresponds to a search range of hundreds of pixels at full resolution. The cost stays low:
+  one 961-candidate search on a small image, then only 25 candidates per level on the way back up. This is what brings full-size plates
+  down to well under the one-minute-per-image target.</p>
 
-<p>A &plusmn;15 px search on a tiny image corresponds to a search range of hundreds of pixels at full resolution. The cost stays low: 
-    one 961-candidate search on a small image, then only 25 candidates per level on the way back up. This is what brings full-size plates 
-    down to well under the one-minute-per-image target.
-  </p>
+<p>I switched to the train image, 00458u, for the rest of the analysis, as it is a higher resolution image. The grids below show what happens
+  at each level of the pyramid (click any panel to open it full size). In each panel, from left to right: the reference (B) channel, the original moving channel,
+  the moving channel after the shift, and the difference image. The first grid compares G to B, and the second compares R to B.
+  Difference images are scaled for visibility, so the brighter the pixel, the more misalignment there is. The shift
+  vectors are shown after the grids.</p>
 
-<p>I switched to the train image, 00458u, for the rest of the analysis as it is a higher resolution image.</p>
-
-<p>I was curious, so I also went ahead and tested to see how to l2 (Euclidean distance) metric would compare to the NCC 
-    (Normalized Cross-Correlation) metric. To make them comparable, the script uses the negative mean square difference between the images,
-    so that both metrics are maximized. </p>
-
-<div class = 'image-container'>
-    <img src="SYDE671_Assignment_1_Images_\00125-singlescale.png" height="300" class="center-image">
-    <img src="SYDE671_Assignment_1_Images_\00125-pyramid-l2.png" height="300" class="center-image">  
+<!-- The original page had a 5th panel per row that repeated the G level-3 file (including in the R row).
+     If you have a full-resolution level (L4), add it as one more <figure> in each grid. -->
+<div class="image-grid">
+  <figure><a href="SYDE671_Assignment_1_Images_/00458-pyramid-l2_pyramid_G_L0_panels_202x233.jpg"><img src="SYDE671_Assignment_1_Images_/00458-pyramid-l2_pyramid_G_L0_panels_202x233.jpg" alt="G-to-B alignment panels at pyramid level 0, 202 by 233 pixels"></a><figcaption>G &rarr; B, level 0 (202&times;233, coarsest)</figcaption></figure>
+  <figure><a href="SYDE671_Assignment_1_Images_/00458-pyramid-l2_pyramid_G_L1_panels_404x467.jpg"><img src="SYDE671_Assignment_1_Images_/00458-pyramid-l2_pyramid_G_L1_panels_404x467.jpg" alt="G-to-B alignment panels at pyramid level 1, 404 by 467 pixels"></a><figcaption>G &rarr; B, level 1 (404&times;467)</figcaption></figure>
+  <figure><a href="SYDE671_Assignment_1_Images_/00458-pyramid-l2_pyramid_G_L2_panels_809x935.jpg"><img src="SYDE671_Assignment_1_Images_/00458-pyramid-l2_pyramid_G_L2_panels_809x935.jpg" alt="G-to-B alignment panels at pyramid level 2, 809 by 935 pixels"></a><figcaption>G &rarr; B, level 2 (809&times;935)</figcaption></figure>
+  <figure><a href="SYDE671_Assignment_1_Images_/00458-pyramid-l2_pyramid_G_L3_panels_1619x1870.jpg"><img src="SYDE671_Assignment_1_Images_/00458-pyramid-l2_pyramid_G_L3_panels_1619x1870.jpg" alt="G-to-B alignment panels at pyramid level 3, 1619 by 1870 pixels"></a><figcaption>G &rarr; B, level 3 (1619&times;1870)</figcaption></figure>
+</div>
+<div class="image-grid">
+  <figure><a href="SYDE671_Assignment_1_Images_/00458-pyramid-l2_pyramid_R_L0_panels_202x233.jpg"><img src="SYDE671_Assignment_1_Images_/00458-pyramid-l2_pyramid_R_L0_panels_202x233.jpg" alt="R-to-B alignment panels at pyramid level 0, 202 by 233 pixels"></a><figcaption>R &rarr; B, level 0 (202&times;233, coarsest)</figcaption></figure>
+  <figure><a href="SYDE671_Assignment_1_Images_/00458-pyramid-l2_pyramid_R_L1_panels_404x467.jpg"><img src="SYDE671_Assignment_1_Images_/00458-pyramid-l2_pyramid_R_L1_panels_404x467.jpg" alt="R-to-B alignment panels at pyramid level 1, 404 by 467 pixels"></a><figcaption>R &rarr; B, level 1 (404&times;467)</figcaption></figure>
+  <figure><a href="SYDE671_Assignment_1_Images_/00458-pyramid-l2_pyramid_R_L2_panels_809x935.jpg"><img src="SYDE671_Assignment_1_Images_/00458-pyramid-l2_pyramid_R_L2_panels_809x935.jpg" alt="R-to-B alignment panels at pyramid level 2, 809 by 935 pixels"></a><figcaption>R &rarr; B, level 2 (809&times;935)</figcaption></figure>
+  <figure><a href="SYDE671_Assignment_1_Images_/00458-pyramid-l2_pyramid_R_L3_panels_1619x1870.jpg"><img src="SYDE671_Assignment_1_Images_/00458-pyramid-l2_pyramid_R_L3_panels_1619x1870.jpg" alt="R-to-B alignment panels at pyramid level 3, 1619 by 1870 pixels"></a><figcaption>R &rarr; B, level 3 (1619&times;1870)</figcaption></figure>
 </div>
 
+<figure class="single">
+  <img src="SYDE671_Assignment_1_Images_/00458-pyramid-vectors-l2.png" alt="Printed displacement vectors for plate 00458 using the L2 metric">
+  <figcaption>Displacement vectors found for plate 00458 (L2).</figcaption>
+</figure>
+
+<h4>L2 vs. NCC</h4>
+<p>I was curious, so I also tested how the L2 (Euclidean distance) metric compares to the NCC
+  (normalized cross-correlation) metric. To make them comparable, the script uses the negative mean squared difference between the images,
+  so that both metrics are maximized.</p>
+<div class="image-container">
+  <figure>
+    <img src="SYDE671_Assignment_1_Images_/00458-pyramid-l2.png" alt="Plate 00458 aligned with the L2 metric" class="center-image">
+    <figcaption>Plate 00458, L2 metric</figcaption>
+  </figure>
+  <figure>
+    <img src="SYDE671_Assignment_1_Images_/00458-pyramid-ncc.png" alt="Plate 00458 aligned with the NCC metric" class="center-image">
+    <figcaption>Plate 00458, NCC metric</figcaption>
+  </figure>
+</div>
+<figure class="single">
+  <img src="SYDE671_Assignment_1_Images_/00458-pyramid-ncc-vectors.png" alt="Printed displacement vectors for plate 00458 using the NCC metric">
+  <figcaption>Displacement vectors found for plate 00458 (NCC).</figcaption>
+</figure>
+
+<h4>Results on all images</h4>
+<p>Displacements (x, y) found by the pyramid search for every plate, using both metrics.</p>
+<table>
+  <thead><tr><th>Plate</th><th>G &rarr; B (L2)</th><th>R &rarr; B (L2)</th><th>G &rarr; B (NCC)</th><th>R &rarr; B (NCC)</th></tr></thead>
+  <tbody>
+    <!-- TODO: one row per plate (all 18 provided images plus your own). Values below are placeholders. -->
+    <tr><td>00056v</td><td>(1,6)</td><td>(1,13)</td><td>(1,6)</td><td>(1,13)</td></tr>
+    <tr><td>00125v</td><td>(2,5)</td><td>(1,10)</td><td>(2,5)</td><td>(1,10)</td></tr>
+    <tr><td>00163v</td><td>(1,-3)</td><td>(1,-4)</td><td>(1,-3)</td><td>(1,-4)</td></tr>
+    <tr><td>00458u</td><td>(5,35)</td><td>(26,71)</td><td>(5,35)</td><td>(26,71)</td></tr>
+    <tr><td>00804v</td><td>(-2, 6)</td><td>(-4,13)</td><td>(-2,6)</td><td>(-4,13)</td></tr>
+    <tr><td>01007a</td><td>(11,49)</td><td>(11,105)</td><td>(11,49)</td><td>(11,105)</td></tr>
+    <tr><td>01047u</td><td>(16, 20)</td><td>(28, 59)</td><td>(16, 20)</td><td>(28, 59)</td></tr>
+    <tr><td>01164v</td><td>(2, 6)</td><td>(3, 11)</td><td>(2, 6)</td><td>(3, 11)</td></tr>
+    <tr><td>01269v</td><td>(2, 6)</td><td>(3, 14)</td><td>(2, 6)</td><td>(3, 14)</td></tr>
+    <tr><td>01522v</td><td>(2, 6)</td><td>(2, 13)</td><td>(2, 6)</td><td>(2, 13)</td></tr>
+    <tr><td>01597v</td><td>(1, 7)</td><td>(1, 16)</td><td>(1, 7)</td><td>(1, 16)</td></tr>
+    <tr><td>01598v</td><td>(0, 8)</td><td>(-1, 17)</td><td>(0, 8)</td><td>(-1, 17)</td></tr>
+    <tr><td>01657u</td><td>(7, 45)</td><td>(9, 96)</td><td>(7, 45)</td><td>(10, 96)</td></tr>
+    <tr><td>01725u</td><td>(37, 64)</td><td>(64, 133)</td><td>(37, 64)</td ><td>(64, 133)</td></tr>
+    <tr><td>01728v</td><td>(1, 8)</td><td>(1, 18)</td><td>(1, 8)</td><td>(1, 18)</td></tr>
+    <tr><td>01861a</td><td>(32, 59)</td><td>(52, 122)</td><td>(32, 59)</td><td>(52, 122)</td></tr>
+    <tr><td>10131v</td><td>(2, 6)</td><td>(3, 12)</td><td>(2, 6)</td><td>(3, 12)</td></tr>
+    <tr><td>31421v</td><td>(0, 8)</td><td>(0, 13)</td><td>(0, 8)</td><td>(0, 13)</td></tr>
+  </tbody>
+</table>
+
+<h3>Bells &amp; whistles: automatic border cropping</h3>
+<p>This assignment was already a struggle, but here I am with some extra time on my hands, and I decided to give the bells &amp; whistles a try.
+  The discoloured borders were a nuisance, so I added a function to automatically crop them away. At least I tried to. The plates have a dark
+  frame around each exposure, and next to it a thin strip that looks strangely coloured, because the three channels don't overlap there.
+  Instead of cropping a fixed margin, the script detects the border:</p>
+<ol>
+  <li>Compute the mean R, G, B value of every row and every column of the aligned image.</li>
+  <li>Estimate a "typical" colour for the image from the median of the middle half of the rows (or columns), which is
+    almost always real picture content.</li>
+  <li>Mark a row or column as <em>bad</em> if any of its channel means falls below 50% of that typical value. This catches
+    both dark frames (all channels low) and strips where only one channel is off.</li>
+  <li>Only look within the outer 12% of each side, and cut just past the innermost bad line found there, plus a small
+    0.5% pad.</li>
+</ol>
+<p>Restricting the search to the outer band prevents a genuinely dark part of the scene (a shadow, a dark garment) from
+  being mistaken for a border and cropped away. The crop adapts to each image, so plates with different border widths
+  are handled with a single fixed set of parameters.</p>
+<div class="image-container">
+  <figure>
+    <img src="SYDE671_Assignment_1_Images_/00458-pyramid-crop.png" alt="Plate 00458 before automatic cropping" class="center-image">
+    <figcaption>Before: borders and coloured edge strips still visible</figcaption>
+  </figure>
+  <figure>
+    <img src="SYDE671_Assignment_1_Images_/00458-pyramid-l2.png" alt="Plate 00458 after automatic cropping" class="center-image">
+    <figcaption>After: borders detected and removed</figcaption>
+  </figure>
+</div>
+<p>This image seemed to work pretty well, but as you can see with the NCC image above, this feature is not perfect.</p>
+
+<h3>Failure cases and limitations</h3>
+<p>I tested my script extensively, and it worked well on all 18 images included in the assignment. That took wayyyy too much time!
+    The one thing would just be that I was unable to get auto-crop to work well on all the images.
+    </p>
+
+<p>I used the Emir of Bukhara to test the bells and whistles, however it didn't even make it to the autocrop step! 
+    Matching raw pixel intensities assumes the same object has similar brightness in every channel. That breaks down when it doesn't. 
+    In the Emir portrait, his blue robe is bright in the blue channel but dark in the red channel, so the intensity-based score can favor a 
+    wrong shift. Aligning on image gradients or edges, might be a more effective method.</p>
+<figure class="single" style="max-width:none">
+  <img src="SYDE671_Assignment_1_Images_\01886-lc.png" alt="Emir of Bukhara using pyramid method" class="center-image" style="max-height:600px">
+  <figcaption>Emir of Bukhara using pyramid method</figcaption>
+</figure>    
+    
+
+<figure class="single" style="max-width:none">
+  <img src="SYDE671_Assignment_1_Images_/contact_sheet_l2.jpg" alt="Contact sheet of all 18 aligned plates using l2" class="center-image" style="max-height:600px">
+  <figcaption>Contact sheet of all 18 aligned results using l2.</figcaption>
+</figure>
+<figure class="single" style="max-width:none">
+  <img src="SYDE671_Assignment_1_Images_/contact_sheet_ncc.jpg" alt="Contact sheet of all 18 aligned plates using ncc" class="center-image" style="max-height:600px">
+  <figcaption>Contact sheet of all 18 aligned results using ncc.</figcaption>
+</figure>
 </body>
 </html>
