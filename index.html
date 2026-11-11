@@ -4,7 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SYDE671 Assignment 1</title>
+
 <style>
+html { scroll-behavior: smooth; }
 body { font-family: Arial, sans-serif; margin: 20px auto; padding: 0 20px; max-width: 1100px; line-height: 1.55; color: #222; }
 h1 { border-bottom: 2px solid #ddd; padding-bottom: 8px; text-align: center; }
 h2 { margin-top: 2.2em; border-bottom: 1px solid #ddd; padding-bottom: 4px; text-align: center; }
@@ -12,29 +14,50 @@ h3 { margin-top: 1.6em; }
 h4 { margin-top: 1.3em; }
 h3, h4, p, ol, ul { max-width: 850px; margin-left: auto; margin-right: auto; box-sizing: border-box; }
 ol, ul { padding-left: 2em; }
-figure { margin: 0; text-align: center; }
-figcaption { font-size: 0.9em; color: #555; margin-top: 6px; }
+figure { margin: 1.4em auto; text-align: center; }
+.image-grid figure { margin: 0; }
+h5 { max-width: 850px; margin: 1.3em auto 0.4em; box-sizing: border-box; }
+figcaption { font-size: 0.9em; color: #555; margin: 8px auto 0; max-width: 850px; text-align: left; }
 img { max-width: 100%; height: auto; }
 .center-image { display: block; margin: 0 auto; }
 .image-container { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; align-items: flex-start; margin: 1.2em 0; }
 .image-container figure { flex: 0 1 500px; }
 .image-container.small figure { flex-basis: 320px; }
-.single { margin: 1.2em auto; max-width: 500px; }
+.single { margin: 1.2em auto; max-width: 900px; }
 .image-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 1.2em 0; }
 table { border-collapse: collapse; margin: 1em auto; font-size: 0.95em; }
 th, td { border: 1px solid #ccc; padding: 6px 12px; text-align: center; }
 th { background: #f3f3f3; }
+pre { background: #f6f8fa; border: 1px solid #e1e4e8; border-radius: 4px; padding: 12px; overflow-x: auto; max-width: 850px; margin: 1em auto; font-size: 0.85em; line-height: 1.4; box-sizing: border-box; }
+code { font-family: Consolas, "Courier New", monospace; }
+p code { background: #f3f3f3; padding: 1px 4px; border-radius: 3px; font-size: 0.92em; }
+details.code-block{max-width:850px;margin:1em auto;border:1px solid #ddd;border-radius:6px;background:#fafafa;}details.code-block summary{cursor:pointer;padding:10px 14px;font-weight:600;user-select:none;}
+details.code-block summary:hover{background:#f3f3f3;}details.code-block[open] summary{border-bottom:1px solid #ddd;}details.code-block pre{margin:0;border:none;border-radius:0;}
+/* numbered captions: Figure N / Table N (appendix: Figure A1, Table A1, ...) */
+body { counter-reset: fig tab afig atab; }
+figcaption::before { counter-increment: fig; content: "Figure " counter(fig) ". "; font-weight: 600; color: #333; }
+.appendix figcaption::before { counter-increment: afig; content: "Figure A" counter(afig) ". "; }
+caption { caption-side: bottom; font-size: 0.9em; color: #555; padding-top: 8px; max-width: 850px; text-align: left; }
+caption::before { counter-increment: tab; content: "Table " counter(tab) ". "; font-weight: 600; color: #333; }
+.appendix caption::before { counter-increment: atab; content: "Table A" counter(atab) ". "; }
+.assignment-nav { text-align: center; margin: 1em 0 0; }
+.assignment-nav a { display: inline-block; margin: 0 6px; padding: 4px 12px; border: 1px solid #ccc; border-radius: 4px; color: #1a4f8b; text-decoration: none; }
+.assignment-nav a[aria-current="page"] { background: #f3f3f3; color: #222; font-weight: 600; }
+.roadmap { text-align: center; color: #555; font-size: 0.95em; margin-top: 1.2em; }
+.roadmap a, .appendix-toc a, p a[href^="#"] { color: #1a4f8b; }
+.appendix h3 { text-align: left; border-bottom: 1px solid #eee; padding-bottom: 4px; }
+.appendix-toc { max-width: 850px; margin: 0.5em auto 1em; }
+.image-grid { align-items: stretch; }
+.image-grid figure { display: flex; flex-direction: column; }
+.image-grid figure img { margin: 0 auto; }
+.image-grid figcaption { margin: auto 0 0; padding-top: 8px; max-width: none; }
 @media (max-width: 700px) { .image-grid { grid-template-columns: 1fr; } }
 </style>
+
+
 </head>
 <body>
 <h1>Welcome to My SYDE671 Portfolio!</h1>
-
-<nav class="assignment-nav" aria-label="Assignments">
-  <a href="https://janyeet-dotcom.github.io/SYDE671-assignment1/" aria-current="page">Assignment 1</a>
-  <a href="https://janyeet-dotcom.github.io/SYDE671-assignment2/">Assignment 2</a>
-  <a href="https://janyeet-dotcom.github.io/SYDE671-assignment3/">Assignment 3</a>
-</nav>
 
 <!-- ================= PART ONE ================= -->
 <h2>Part One: Becoming Friends with Your Camera</h2>
