@@ -20,6 +20,8 @@ h5 { max-width: 850px; margin: 1.3em auto 0.4em; box-sizing: border-box; }
 figcaption { font-size: 0.9em; color: #555; margin: 8px auto 0; max-width: 850px; text-align: left; }
 img { max-width: 100%; height: auto; }
 .center-image { display: block; margin: 0 auto; }
+.image-row { display: flex; flex-wrap: nowrap; gap: 6px; justify-content: center; align-items: flex-start; max-width: 1000px; margin: 0 auto; }
+.image-row img { flex: 1 1 0; min-width: 0; width: 100%; height: auto; }
 .image-container { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; align-items: flex-start; margin: 1.2em 0; }
 .image-container figure { flex: 0 1 500px; }
 .image-container.small figure { flex-basis: 320px; }
@@ -54,10 +56,18 @@ caption::before { counter-increment: tab; content: "Table " counter(tab) ". "; f
 @media (max-width: 700px) { .image-grid { grid-template-columns: 1fr; } }
 </style>
 
-
 </head>
 <body>
 <h1>Welcome to My SYDE671 Portfolio!</h1>
+
+<nav class="assignment-nav" aria-label="Assignments">
+  <a href="https://janyeet-dotcom.github.io/SYDE671-assignment1/" aria-current="page" >Assignment 1</a>
+  <a href="https://janyeet-dotcom.github.io/SYDE671-assignment2/">Assignment 2</a>
+  <a href="https://janyeet-dotcom.github.io/SYDE671-assignment3/">Assignment 3</a>
+  <a href="https://janyeet-dotcom.github.io/SYDE671-assignment4/">Assignment 4</a>
+  <a href="https://janyeet-dotcom.github.io/SYDE671-assignment5/">Assignment 5</a>
+</nav>
+
 
 <!-- ================= PART ONE ================= -->
 <h2>Part One: Becoming Friends with Your Camera</h2>
